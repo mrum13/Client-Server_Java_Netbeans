@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-2.5.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean class="org.springframework.remoting.support.SimpleHttpServerFactoryBean">
+        <property name="contexts">
+            <map>
+                <entry key="/SiswaImpl"
+                    value-ref="siswaServiceHttpInvoker"/>
+                <entry key="/AgamaImpl"
+                    value-ref="agamaServiceHttpInvoker"/>
+                <entry key="/AnggotaPerpusImpl"
+                    value-ref="anggotaPerpusServiceHttpInvoker"/>
+                <entry key="/BukuImpl"
+                    value-ref="bukuServiceHttpInvoker"/>
+                <entry key="/JuruasanImpl"
+                    value-ref="jurusanServiceHttpInvoker"/>
+                <entry key="/KategoryImpl"
+                    value-ref="kategoryServiceHttpInvoker"/>
+                <entry key="/KelasImpl"
+                    value-ref="kelasServiceHttpInvoker"/>
+                <entry key="/KlasifikasiImpl"
+                    value-ref="klasifikasiServiceHttpInvoker"/>
+                <entry key="/MapelImpl"
+                    value-ref="mapelServiceHttpInvoker"/>
+                <entry key="/PeminjamanImpl"
+                    value-ref="peminjamanServiceHttpInvoker"/>
+                <entry key="/RuangImpl"
+                    value-ref="ruangServiceHttpInvoker"/>
+                <entry key="/ThnPelajaranImpl"
+                    value-ref="thnPelajaranServiceHttpInvoker"/>
+
+           </map>
+        </property>
+        <property name="port" value="40591"/>
+        <property name="hostname" value="192.168.0.1"/>
+    </bean>
+    <bean id="siswaServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="siswaService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.SiswaImpl"/>
+    
+    <bean id="agamaServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="agamaService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.AgamaImpl"/>
+    
+    <bean id="anggotaPerpusServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="anggotaPerpusService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.AnggotaPerpusImpl"/>
+    
+    <bean id="bukuServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="bukuService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.BukuImpl"/>
+    
+    <bean id="jurusanServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="jurusanService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.JurusanImpl"/>
+    
+    <bean id="kategoryServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="kategoryService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.KategoryImpl"/>
+    
+    <bean id="kelasServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="kelasService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.KelasImpl"/>
+    
+    <bean id="klasifikasiServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="klasifikasiService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.KlasifikasiImpl"/>
+    
+    <bean id="mapelServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="mapelService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.MapelImpl"/>
+    
+    <bean id="peminjamanServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="peminjamanService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.PeminjamanImpl"/>
+    
+    <bean id="ruangServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="ruangService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.RuangImpl"/>
+    
+    <bean id="thnPelajaranServiceHttpInvoker"
+      class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+      p:service-ref="thnPelajaranService"
+      p:serviceInterface="com.wordpress.yyaayyaatt.dao.impl.ThnPelajaranImpl"/>
+    
+</beans>

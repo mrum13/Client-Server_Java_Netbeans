@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e9aafc2-0182-43eb-8af1-5cc06710b7c5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="39"/>
+	<parameter name="nim" class="java.lang.String"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="kelas" class="java.lang.String"/>
+	<field name="kd_mk" class="java.lang.String"/>
+	<field name="mk" class="java.lang.String"/>
+	<field name="sks" class="java.lang.Integer"/>
+	<field name="takad" class="java.lang.String"/>
+	<variable name="sumsks" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sks}]]></variableExpression>
+	</variable>
+	<variable name="no" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{kd_mk}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="307" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement uuid="e48a70b5-b8ec-4835-9e6d-18b06e117868" x="4" y="54" width="548" height="165" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA["C:\\Users\\085741161625\\Documents\\NetBeansProjects\\KRS\\src\\report\\trans.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="0" width="492" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARTU RENCANA STUDI (KRS)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="18" width="492" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POLITEKNIK HARAPAN BERSAMA TEGAL]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="ba27ab7c-e323-40be-813b-5cb3bd06c007" x="2" y="2" width="63" height="58"/>
+				<imageExpression><![CDATA["C:\\Users\\085741161625\\Documents\\NetBeansProjects\\KRS\\src\\report\\logoPol.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="33" width="491" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kampus I : Jln. Mataram No. 09 Tegal, Telp. (0283) 352000. Kampus II : Jln. Dewi Sartika No. 71 Tegal Telp. (0283) 350567]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="e578bf99-4bac-4939-bb30-29dd001d9b3b" x="0" y="56" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="e578bf99-4bac-4939-bb30-29dd001d9b3b" x="0" y="59" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="18" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="77" splitType="Stretch">
+			<frame>
+				<reportElement uuid="8c637fbd-2ce5-4d88-b634-87ec8a21718c" mode="Opaque" x="1" y="54" width="554" height="22" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</frame>
+			<staticText>
+				<reportElement uuid="086a37ec-4c62-485c-8838-eefc6cd2b6e3" x="82" y="57" width="78" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE MK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="180" y="57" width="263" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATA KULIAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d3d5658-8126-4b2d-8a51-f95161d86296" x="455" y="57" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="086a37ec-4c62-485c-8838-eefc6cd2b6e3" x="0" y="57" width="63" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="fdbd3ff0-855a-4005-97e6-822670782c1e" x="0" y="54" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="a2bc7adb-6714-43ea-a249-735b5df87e77" x="0" y="76" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="554" y="54" width="1" height="23"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="454" y="54" width="1" height="23"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="170" y="54" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="71" y="55" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="0" y="54" width="1" height="22"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3b6adb44-f6d0-4c78-a2df-7b6042772a17" x="2" y="5" width="160" height="20"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NIM      : "+$P{nim}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7d5d056c-7d5d-415a-99a6-cf093dd4a5e4" x="2" y="25" width="160" height="20"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NAMA  : "+$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9b587e25-c0a2-4a55-8224-a1bc8a7bcc48" x="407" y="5" width="145" height="20"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["KELAS    : "+$F{kelas}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c15917d9-c042-4f77-b4ef-7db3a7fb6c2a" x="407" y="25" width="145" height="20"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T. AKAD : "+$F{takad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="d9642a3c-bc89-407a-be44-1b91e25d874a" x="0" y="1" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d9642a3c-bc89-407a-be44-1b91e25d874a" x="0" y="22" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="0" y="2" width="1" height="41"/>
+			</line>
+			<line>
+				<reportElement uuid="d9642a3c-bc89-407a-be44-1b91e25d874a" x="0" y="43" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="554" y="2" width="1" height="41"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="404" y="2" width="1" height="41"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="171" y="2" width="1" height="41"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="13832c49-6f07-4fe2-872b-ab3149ba94ef" x="82" y="0" width="78" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_mk}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5bfb19f1-6c70-431c-8158-2050bd0afc44" x="455" y="0" width="95" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sks}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="694d9ae1-3454-4c66-b298-29c1a0f5ba3c" x="180" y="0" width="263" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mk}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="0fbf739e-9139-4cf3-b918-cacd68dd1884" x="0" y="0" width="63" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="554" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="454" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="170" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="71" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="3ed37fec-a0d9-419a-907f-959b61d82072" x="0" y="0" width="1" height="20"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="39305637-ef82-4592-bfb8-664e6197f653" x="2" y="0" width="169" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="052f36e0-89ce-446e-906f-2191490d9b2e" x="434" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="5e52c687-07a6-45bb-8e42-9e6c11b0fe7a" x="514" y="0" width="40" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5e8a3241-0a1f-42e0-a216-1c85f7263625" x="423" y="1" width="127" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jumlah SKS : "+$V{sumsks}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="e865f208-d9db-4b6a-b8d2-2b31ff8cddba" x="0" y="0" width="555" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

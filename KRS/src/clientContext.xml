@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-2.5.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <context:property-placeholder location="classpath:server.properties"/>
+
+    <bean id="siswaService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/SiswaService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.SiswaService">
+    </bean>
+    <bean id="agamaService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/AgamaService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.AgamaService">
+    </bean>
+    <bean id="anggotaService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/AnggotaPerpusService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.AnggotaPerpusService">
+    </bean>
+    
+    <bean id="bukuService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/BukuService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.BukuService">
+    </bean>
+     
+    <bean id="jurusanService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/JurusanService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.JurusanService">
+    </bean>  
+    <bean id="kategoryService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/KategoryService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.KategoryService">
+    </bean>
+    <bean id="kelasService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/KelasService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.KelasService">
+    </bean>
+    <bean id="klasifikasiService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/KlasifikasiService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.KlasifikasiService">
+    </bean>
+    <bean id="mapelService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/MapelService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.MapelService">
+    </bean>
+    <bean id="peminjamanService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/PeminjamanService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.PeminjamanService">
+    </bean>
+    <bean id="ruangService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/RuangService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.RuangService">
+    </bean>
+    <bean id="thnPelajaranService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean"
+        p:serviceUrl="http://${server.ip}:${server.port}/ThnPelajaranService"
+        p:serviceInterface="com.wordpress.yyaayyaatt.service.ThnPelajaranService">
+    </bean>
+</beans>

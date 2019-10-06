@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05b3a044-00b1-49fd-8589-ad671505f16e">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ta" class="java.lang.String"/>
+	<field name="kd_mk" class="java.lang.String"/>
+	<field name="mk" class="java.lang.String"/>
+	<field name="sks" class="java.lang.Integer"/>
+	<field name="takad" class="java.lang.String"/>
+	<field name="dosen" class="java.lang.String"/>
+	<variable name="SUMMK" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{kd_mk}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="18" width="492" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POLITEKNIK HARAPAN BERSAMA TEGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="33" width="491" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kampus I : Jln. Mataram No. 09 Tegal, Telp. (0283) 352000. Kampus II : Jln. Dewi Sartika No. 71 Tegal Telp. (0283) 350567]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5792998-b9d5-4e4e-a377-97cac933eb22" x="63" y="0" width="492" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATA KULIAH]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="ba27ab7c-e323-40be-813b-5cb3bd06c007" x="0" y="0" width="63" height="58"/>
+				<imageExpression><![CDATA["\\report\\logoPol.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="e578bf99-4bac-4939-bb30-29dd001d9b3b" x="0" y="56" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="e578bf99-4bac-4939-bb30-29dd001d9b3b" x="0" y="59" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="8867e587-242a-411e-8c06-4f74eceb3598" x="453" y="15" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5d0c5fee-ee1b-4445-afb2-e330d68e273e" x="0" y="14" width="216" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["THN. AKADEMIK = "+$P{ta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement uuid="bb9b8f85-0965-4d56-977c-4b48064cac1c" mode="Opaque" x="0" y="0" width="554" height="20" backcolor="#CCCCCC"/>
+			</frame>
+			<staticText>
+				<reportElement uuid="94e15958-26b8-408a-9519-64dac1f64e80" x="2" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE MK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2c10e344-e995-4d98-b016-33ebd75dcdbe" x="80" y="0" width="222" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA MK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="43abf7ba-3b0d-4d3d-b7fd-611000ebe1d9" x="312" y="0" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5a609206-8c7f-427b-9397-a4b78e6d3d09" x="393" y="0" width="160" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOSEN]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="893d4ef3-2330-4df4-914e-8453e338ff19" x="0" y="-1" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="82dc347a-6d88-44fc-8621-493432c69269" x="0" y="19" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="554" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="389" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="307" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="73" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="0" y="-1" width="1" height="21"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="847da669-261b-43fa-ac28-63ebb8796deb" x="2" y="0" width="72" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_mk}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="6edfb0f7-1dee-48fb-b1d1-91de685d2623" x="80" y="0" width="222" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mk}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="371c9cb7-41ee-4f06-9bee-268c07de85a4" x="312" y="0" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sks}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c9bbd31f-913d-4239-9e4a-d9ef0b266542" x="393" y="0" width="160" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dosen}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="d79ad177-8c9b-44eb-b87c-0b457a5b2699" x="0" y="19" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="0" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="73" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="307" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="389" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="95ebc11b-91f6-43d9-a686-6ffa50a89ad5" x="554" y="-1" width="1" height="21"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="04806eb0-6e13-439a-8984-9c23f7eaf035" x="391" y="0" width="121" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Halaman "+$V{PAGE_NUMBER}+" dari"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="bbbbe82a-7506-4937-beae-7ad2828e0d45" x="512" y="0" width="40" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="62a0f94b-c6d3-4738-b35e-60cdb0f9a7be" x="0" y="0" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e393cbdc-6683-4027-8f62-e0c5aadf9f6c" x="2" y="0" width="246" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL MK = "+$V{SUMMK}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
